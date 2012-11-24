@@ -1,32 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Rudeltippen by svenkubiak</title>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Rudeltippen : A football betting game based on the Play Framework and Twitter Bootstrap." />
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <title>Rudeltippen</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Rudeltippen</h1>
-        <p>A football betting game based on the Play Framework and Twitter Bootstrap.</p>
-        <p class="view"><a href="https://github.com/svenkubiak/Rudeltippen">View the Project on GitHub <small>svenkubiak/Rudeltippen</small></a></p>
-        <ul>
-          <li><a href="https://github.com/svenkubiak/Rudeltippen/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/svenkubiak/Rudeltippen/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/svenkubiak/Rudeltippen">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/svenkubiak/Rudeltippen">View on GitHub</a>
+
+          <h1 id="project_title">Rudeltippen</h1>
+          <h2 id="project_tagline">A football betting game based on the Play Framework and Twitter Bootstrap.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/svenkubiak/Rudeltippen/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/svenkubiak/Rudeltippen/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <p>If you like Rudeltippen, <a href="https://flattr.com/thing/680536/Rudeltippen">Flattr it</a>. Thanks!</p>
 
 <h2>Available tournaments</h2>
@@ -91,91 +95,61 @@
 
 <p>Set your Rudeltippen URL</p>
 
-<div class="highlight">
-<pre>%prod.app.register.url<span class="o">=</span>http://www.yourdomain.com
-</pre>
-</div>
-
+<div class="highlight"><pre>%prod.app.register.url<span class="o">=</span>http://www.yourdomain.com
+</pre></div>
 
 <p>Set the username and password for initial setup (make it "secure")</p>
 
-<div class="highlight">
-<pre>app.setup.username<span class="o">=</span>admin
+<div class="highlight"><pre>app.setup.username<span class="o">=</span>admin
 app.setup.password<span class="o">=</span>admin
-</pre>
-</div>
-
+</pre></div>
 
 <p>Set the language for Rudeltippen (currently de or en)</p>
 
-<div class="highlight">
-<pre>default.language<span class="o">=</span>de
-</pre>
-</div>
-
+<div class="highlight"><pre>default.language<span class="o">=</span>de
+</pre></div>
 
 <p>Since version 1.1.0 Rudeltippen has a feature which can automatically updates your playing schedule. By default this feature is not enable. If you want to enable this feature set 'automatic.updates' to true</p>
 
-<div class="highlight">
-<pre>%prod.automatic.updates<span class="o">=</span><span class="nb">false</span>
-</pre>
-</div>
-
+<div class="highlight"><pre>%prod.automatic.updates<span class="o">=</span><span class="nb">false</span>
+</pre></div>
 
 <p>Set the application key for Rudeltippen (make it "secure"; e.g. use a key-generator)</p>
 
-<div class="highlight">
-<pre>application.secret<span class="o">=</span>yoursecretcryptographicskey
-</pre>
-</div>
-
+<div class="highlight"><pre>application.secret<span class="o">=</span>yoursecretcryptographicskey
+</pre></div>
 
 <p>Set you database connection. For a simple MySQL connection this will be something like this</p>
 
-<div class="highlight">
-<pre>%prod.db<span class="o">=</span>mysql://user:pwd@host/database
-</pre>
-</div>
-
+<div class="highlight"><pre>%prod.db<span class="o">=</span>mysql://user:pwd@host/database
+</pre></div>
 
 <p>Set your SMTP credentials (uncomment %prod.mail.smtp.channel if you want to use SSL)</p>
 
-<div class="highlight">
-<pre>%prod.mail.smtp.host<span class="o">=</span>127.0.0.1
+<div class="highlight"><pre>%prod.mail.smtp.host<span class="o">=</span>127.0.0.1
 %prod.mail.smtp.user<span class="o">=</span>admin
 %prod.mail.smtp.pass<span class="o">=</span>
 <span class="c">#%prod.mail.smtp.channel=ssl</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>If you have a Gmail account, just enter your SMTP credentials as follows</p>
 
-<div class="highlight">
-<pre>%prod.mail.smtp.host<span class="o">=</span>smtp.gmail.com
+<div class="highlight"><pre>%prod.mail.smtp.host<span class="o">=</span>smtp.gmail.com
 %prod.mail.smtp.user<span class="o">=</span>yourGmailLogin
 %prod.mail.smtp.pass<span class="o">=</span>yourGmailPassword
 %prod.mail.smtp.channel<span class="o">=</span>ssl
-</pre>
-</div>
-
+</pre></div>
 
 <p>Set your E-Mail-Sender and reply-to address</p>
 
-<div class="highlight">
-<pre>mailservice.replyto<span class="o">=</span>me@example.de
+<div class="highlight"><pre>mailservice.replyto<span class="o">=</span>me@example.de
 mailservice.from<span class="o">=</span>Rudelmail &lt;me@example.de&gt;
-</pre>
-</div>
-
+</pre></div>
 
 <p>By default Rudeltippen runs with -Xmx=128m -Xmx64m. This just be enough for 50 to 100 users. Change this, if required.</p>
 
-<div class="highlight">
-<pre>jvm.memory<span class="o">=</span>-Xmx128m -Xms64m
-</pre>
-</div>
-
+<div class="highlight"><pre>jvm.memory<span class="o">=</span>-Xmx128m -Xms64m
+</pre></div>
 
 <p>Save application.conf.</p>
 
@@ -195,11 +169,8 @@ mailservice.from<span class="o">=</span>Rudelmail &lt;me@example.de&gt;
 
 <p>You are now ready to start Rudeltippen. If you are on UNIX or Mac you can just run the following command in your INSTLLATIONFOLDER</p>
 
-<div class="highlight">
-<pre>startup.sh
-</pre>
-</div>
-
+<div class="highlight"><pre>startup.sh
+</pre></div>
 
 <p>If you’re on Windows, just calling 'startup.bat' would execute Rudeltippen in the current command window. Thus, closing the window will close Rudeltippen. You'll need PsExec from the <a href="http://technet.microsoft.com/de-de/sysinternals/bb896649.aspx">PsTools</a> to solve this issue.
 After you have downloaded PsTools and have PsExec installed, make sure that psexe.exe is available on your command line. Otherwise add it to your path variable in your system environment.
@@ -207,19 +178,13 @@ You'll find an example file called "startup.bat.example" in INSTLLATIONFOLDER. O
 
 <p>Example:</p>
 
-<div class="highlight">
-<pre>call psexec /s c:<span class="se">\z</span>eus<span class="se">\p</span>lay-apps<span class="se">\r</span>udeltippen<span class="se">\e</span>m<span class="se">\p</span>lay<span class="se">\p</span>lay.bat start c:<span class="se">\z</span>eus<span class="se">\p</span>lay-apps<span class="se">\r</span>udeltippen<span class="se">\e</span>m
-</pre>
-</div>
-
+<div class="highlight"><pre>call psexec /s c:<span class="se">\z</span>eus<span class="se">\p</span>lay-apps<span class="se">\r</span>udeltippen<span class="se">\e</span>m<span class="se">\p</span>lay<span class="se">\p</span>lay.bat start c:<span class="se">\z</span>eus<span class="se">\p</span>lay-apps<span class="se">\r</span>udeltippen<span class="se">\e</span>m
+</pre></div>
 
 <p>Save the file and rename it to startup.bat. Start Rudeltippen by executing:</p>
 
-<div class="highlight">
-<pre>startup.bat
-</pre>
-</div>
-
+<div class="highlight"><pre>startup.bat
+</pre></div>
 
 <h3>Step 5</h3>
 
@@ -244,19 +209,13 @@ After the setup is complete, Rudeltippen will automatically load all data for th
 
 <p>If you need to stop Rudeltippen. Got to your INSTLLATIONFOLDER and call</p>
 
-<div class="highlight">
-<pre>shutdown.sh
-</pre>
-</div>
-
+<div class="highlight"><pre>shutdown.sh
+</pre></div>
 
 <p>OR</p>
 
-<div class="highlight">
-<pre>shutdown.bat
-</pre>
-</div>
-
+<div class="highlight"><pre>shutdown.bat
+</pre></div>
 
 <h2>Upgrading</h2>
 
@@ -274,19 +233,13 @@ After the setup is complete, Rudeltippen will automatically load all data for th
 
 <p>Go to your INSTLLATIONFOLDER and run</p>
 
-<div class="highlight">
-<pre>shutdown.sh
-</pre>
-</div>
-
+<div class="highlight"><pre>shutdown.sh
+</pre></div>
 
 <p>OR</p>
 
-<div class="highlight">
-<pre>shutdown.bat
-</pre>
-</div>
-
+<div class="highlight"><pre>shutdown.bat
+</pre></div>
 
 <h3>Step 3</h3>
 
@@ -304,27 +257,18 @@ After the setup is complete, Rudeltippen will automatically load all data for th
 
 <p>Rudeltippen has a feature which can automatically updates your playing schedule. By default this feature is not enable. If you want to enable this feature and are upgrading from a version prior to 1.1.0 you need to add the following line to your application.conf:</p>
 
-<div class="highlight">
-<pre>%prod.automatic.updates<span class="o">=</span><span class="nb">true</span>
-</pre>
-</div>
-
+<div class="highlight"><pre>%prod.automatic.updates<span class="o">=</span><span class="nb">true</span>
+</pre></div>
 
 <h3>Step 7</h3>
 
 <p>You are now ready to start Rudeltippen. If you are on UNIX or Mac you can just run the following command in your INSTLLATIONFOLDER</p>
 
-<div class="highlight">
-<pre>startup.sh
-</pre>
-</div>
+<div class="highlight"><pre>startup.sh
+</pre></div>
 
-
-<div class="highlight">
-<pre>startup.bat
-</pre>
-</div>
-
+<div class="highlight"><pre>startup.bat
+</pre></div>
 
 <h2>Advanced configuration</h2>
 
@@ -332,24 +276,18 @@ After the setup is complete, Rudeltippen will automatically load all data for th
 
 <p>By default Rudeltippen runs without SSL. If you want to enable SSL for Rudeltippen you need a private key and a certificate (this may be self-signed). In INSTLLATIONFOLDER/conf/custom you find two empty files:</p>
 
-<div class="highlight">
-<pre>cert.txt
+<div class="highlight"><pre>cert.txt
 key.txt
-</pre>
-</div>
-
+</pre></div>
 
 <p>Paste you private key and your certificate in these files.</p>
 
 <p>Open INSTLLATIONFOLDER/conf/application.conf and uncomment the following lines:</p>
 
-<div class="highlight">
-<pre><span class="c">#https.port=9904</span>
+<div class="highlight"><pre><span class="c">#https.port=9904</span>
 <span class="c">#%prod.certificate.key.file=conf/custom/key.txt</span>
 <span class="c">#%prod.certificate.file=conf/custom/cert.txt</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>You need to restart Rudeltippen in order for the changes to take place. After the restart Rudeltippen listens for SSL-Connection on Port 9904. You will need to change your HTTP-Front-End Server settings accordingly. Edit or update your Proxy settings to connect to the new port. Read the documentation of your HTTP-Server on how to configure SSL Proxy support.</p>
 
@@ -357,15 +295,12 @@ key.txt
 
 <p>Rudeltippen can automatically post the following informations: daily top 3, results updated and new registration to a Twitter-Account. If you want to enable this feature you need a consumerkey, a consumersecret, a token and a secret. Open INSTLLATIONFOLDER/conf/application.conf, uncommend the following lines and paste your data:</p>
 
-<div class="highlight">
-<pre><span class="c">#%prod.twitter.consumerkey=</span>
+<div class="highlight"><pre><span class="c">#%prod.twitter.consumerkey=</span>
 <span class="c">#%prod.twitter.consumersecret=</span>
 <span class="c">#%prod.twitter.token=</span>
 <span class="c">#%prod.twitter.secret=</span>
 <span class="c">#%prod.twitter.enable=false</span>
-</pre>
-</div>
-
+</pre></div>
 
 <p>By default 'twitter.enable' is set to 'false'. Set it to 'true' to enable posting to the Twitter-Account.</p>
 
@@ -375,11 +310,8 @@ key.txt
 
 <p>If you want log4j Support for your Application you find an empty log4j configuration file in INSTLLATIONFOLDER/conf/custom. Edit this file with your required appenders and uncomment the following line in INSTLLATIONFOLDER/application.conf</p>
 
-<div class="highlight">
-<pre><span class="c">#%prod.application.log.path=/custom/log4j.prod.xml</span>
-</pre>
-</div>
-
+<div class="highlight"><pre><span class="c">#%prod.application.log.path=/custom/log4j.prod.xml</span>
+</pre></div>
 
 <p>You need to restart Rudeltippen in order for the changes to take place.</p>
 
@@ -388,12 +320,9 @@ key.txt
 <p>As mentioned <a href="http://www.playframework.org/documentation/1.2.4/production">in the Play documentation</a> you can use a load balancer with multiple Rudeltippen applications. You need to set a different port for each Rudeltippen application and set these ports in your Front-End HTTP Server configuration.
 The jobs Rudeltippen executes do not know about how many instances you run and will by default run in each instance. To avoid this, you can set the name of the application- and the job-instance. Rudeltippen will only execute Jobs in an instance where the name of the appname and jobinstance matches.</p>
 
-<div class="highlight">
-<pre>application.name<span class="o">=</span>rudeltippen
+<div class="highlight"><pre>application.name<span class="o">=</span>rudeltippen
 app.jobinstance<span class="o">=</span>rudeltippen
-</pre>
-</div>
-
+</pre></div>
 
 <p>You need to restart Rudeltippen in order for the changes to take place.</p>
 
@@ -415,11 +344,16 @@ app.jobinstance<span class="o">=</span>rudeltippen
 </ul>
       </section>
     </div>
-    <footer>
-      <p>Project maintained by <a href="https://github.com/svenkubiak">svenkubiak</a></p>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
-    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Rudeltippen maintained by <a href="https://github.com/svenkubiak">svenkubiak</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
     
+
   </body>
 </html>
