@@ -31,7 +31,11 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <p>If you like Rudeltippen, <a href="https://flattr.com/thing/680536/Rudeltippen">Flattr it</a>. Thanks!</p>
+        <h2>Rudeltippen</h2>
+
+<p>A football betting game based on the Play Framework and Twitter Bootstrap.</p>
+
+<p>If you like Rudeltippen, <a href="https://flattr.com/thing/680536/Rudeltippen">Flattr it</a>. Thanks!</p>
 
 <h2>Available tournaments</h2>
 
@@ -54,6 +58,7 @@
 <li>SSL support</li>
 <li>Load balancer support</li>
 <li>Multilingual</li>
+<li>Runs on - Linux, Mac or Windows</li>
 </ul><h2>Requirements</h2>
 
 <ul>
@@ -61,7 +66,6 @@
 <li>Apache, Nginx, Lighttpd or any other HTTP-Server with Proxy-Support</li>
 <li>SMTP-Account (with SSL/non-SSL, e.g. <a href="http://mail.google.com/">Gmail</a>)</li>
 <li>MySQL 5+</li>
-<li>Linux, Mac or Windows</li>
 </ul><h2>Available Languages</h2>
 
 <ul>
@@ -71,19 +75,13 @@
 
 <p>You can find some screenshots of Rudeltippen <a href="https://picasaweb.google.com/108885060281225128504/Rudeltippen">here</a></p>
 
-<h2>Demo application</h2>
-
-<p>You can find a Demo <a href="http://demo.rudeltippen.de">here</a>. Login with the following credentials:</p>
-
-<p>Username: <a href="mailto:demo@rudeltippen.de">demo@rudeltippen.de</a></p>
-
-<p>Password: demo12345</p>
-
-<p>Please note that the above user is not an administrative user, so some features are not available. Also registration is not enabled.</p>
-
 <h2>Installation guide</h2>
 
 <p>This installation guide assumes that you already have JDK 1.6+ installed and have your database- and SMTP credentials right beside you.</p>
+
+<h3>Step 0</h3>
+
+<p>Download and install <a href="http://www.playframework.org/documentation/1.2.5/install">Play Framework 1.2.x</a></p>
 
 <h3>Step 1</h3>
 
@@ -91,14 +89,16 @@
 
 <h3>Step 2</h3>
 
-<p>Open INSTLLATIONFOLDER/conf/application.conf</p>
+<p>Rename INSTLLATIONFOLDER/conf/application.conf.example to application.conf</p>
+
+<p>Open application.conf</p>
 
 <p>Set your Rudeltippen URL</p>
 
 <div class="highlight"><pre>%prod.app.register.url<span class="o">=</span>http://www.yourdomain.com
 </pre></div>
 
-<p>Set the username and password for initial setup (make it "secure")</p>
+<p>Set username and password for initial setup (make it "secure")</p>
 
 <div class="highlight"><pre>app.setup.username<span class="o">=</span>admin
 app.setup.password<span class="o">=</span>admin
@@ -109,17 +109,17 @@ app.setup.password<span class="o">=</span>admin
 <div class="highlight"><pre>default.language<span class="o">=</span>de
 </pre></div>
 
-<p>Since version 1.1.0 Rudeltippen has a feature which can automatically updates your playing schedule. By default this feature is not enable. If you want to enable this feature set 'automatic.updates' to true</p>
+<p>Rudeltippen has a feature which can automatically updates your playing schedule. By default this feature is not enable. If you want to enable this feature set 'automatic.updates' to true</p>
 
 <div class="highlight"><pre>%prod.automatic.updates<span class="o">=</span><span class="nb">false</span>
 </pre></div>
 
-<p>Set the application key for Rudeltippen (make it "secure"; e.g. use a key-generator)</p>
+<p>Set the application key for Rudeltippen (make it "secure")</p>
 
 <div class="highlight"><pre>application.secret<span class="o">=</span>yoursecretcryptographicskey
 </pre></div>
 
-<p>Set you database connection. For a simple MySQL connection this will be something like this</p>
+<p>Set you MySQL database connection.</p>
 
 <div class="highlight"><pre>%prod.db<span class="o">=</span>mysql://user:pwd@host/database
 </pre></div>
@@ -140,18 +140,18 @@ app.setup.password<span class="o">=</span>admin
 %prod.mail.smtp.channel<span class="o">=</span>ssl
 </pre></div>
 
-<p>Set your E-Mail-Sender and reply-to address</p>
+<p>Set your eMail-Sender and reply-to address</p>
 
 <div class="highlight"><pre>mailservice.replyto<span class="o">=</span>me@example.de
 mailservice.from<span class="o">=</span>Rudelmail &lt;me@example.de&gt;
 </pre></div>
 
-<p>By default Rudeltippen runs with -Xmx=128m -Xmx64m. This just be enough for 50 to 100 users. Change this, if required.</p>
+<p>By default, Rudeltippen runs with -Xmx=128m -Xmx64m. Change this, if required.</p>
 
 <div class="highlight"><pre>jvm.memory<span class="o">=</span>-Xmx128m -Xms64m
 </pre></div>
 
-<p>Save application.conf.</p>
+<p>Save application.conf</p>
 
 <h3>Step 3</h3>
 
@@ -163,40 +163,22 @@ mailservice.from<span class="o">=</span>Rudelmail &lt;me@example.de&gt;
 
 <h3>Step 4</h3>
 
-<blockquote>
-<p>It will most likely be required to make startup.sh, shutdown.sh and INSTLLATIONFOLDER/play/play executable if you are on UNIX or Mac</p>
-</blockquote>
+<p>Start Rudeltippen by executing the following command in your INSTLLATIONFOLDER:</p>
 
-<p>You are now ready to start Rudeltippen. If you are on UNIX or Mac you can just run the following command in your INSTLLATIONFOLDER</p>
-
-<div class="highlight"><pre>startup.sh
-</pre></div>
-
-<p>If you’re on Windows, just calling 'startup.bat' would execute Rudeltippen in the current command window. Thus, closing the window will close Rudeltippen. You'll need PsExec from the <a href="http://technet.microsoft.com/de-de/sysinternals/bb896649.aspx">PsTools</a> to solve this issue.
-After you have downloaded PsTools and have PsExec installed, make sure that psexe.exe is available on your command line. Otherwise add it to your path variable in your system environment.
-You'll find an example file called "startup.bat.example" in INSTLLATIONFOLDER. Open the file and change the last line according to your file system.</p>
-
-<p>Example:</p>
-
-<div class="highlight"><pre>call psexec /s c:<span class="se">\z</span>eus<span class="se">\p</span>lay-apps<span class="se">\r</span>udeltippen<span class="se">\e</span>m<span class="se">\p</span>lay<span class="se">\p</span>lay.bat start c:<span class="se">\z</span>eus<span class="se">\p</span>lay-apps<span class="se">\r</span>udeltippen<span class="se">\e</span>m
-</pre></div>
-
-<p>Save the file and rename it to startup.bat. Start Rudeltippen by executing:</p>
-
-<div class="highlight"><pre>startup.bat
+<div class="highlight"><pre>play start
 </pre></div>
 
 <h3>Step 5</h3>
 
-<p>Open your browser and go to <a href="http://yourdomain.com/system/setup">http://yourdomain.com/system/setup</a></p>
+<p>Open a Browser and go to <a href="http://www.yourdomain.com/system/setup">http://www.yourdomain.com/system/setup</a></p>
 
 <blockquote>
-<p>You did set username and password in application.conf (see step 3)</p>
+<p>You did set username and password in application.conf (see Step 3)</p>
 </blockquote>
 
 <h3>Step 6</h3>
 
-<p>Change the default values if you want to and create an initial user.</p>
+<p>Change the default values if you want and create an initial user.</p>
 
 <blockquote>
 <p>The initial user will be an administrative user and automatically activated.
@@ -207,23 +189,12 @@ After the setup is complete, Rudeltippen will automatically load all data for th
 
 <p>Login with your just created user and enjoy Rudeltippen!</p>
 
-<p>If you need to stop Rudeltippen. Got to your INSTLLATIONFOLDER and call</p>
+<p>If you need to stop Rudeltippen. Go to your INSTLLATIONFOLDER and execute the followin command</p>
 
-<div class="highlight"><pre>shutdown.sh
-</pre></div>
-
-<p>OR</p>
-
-<div class="highlight"><pre>shutdown.bat
+<div class="highlight"><pre>play stop
 </pre></div>
 
 <h2>Upgrading</h2>
-
-<h3>Step 0</h3>
-
-<p>Please check the release notes (if available) before updating!</p>
-
-<p>Go to your INSTLLATIONFOLDER and make a copy of /conf/application.conf file and /conf/custom folder.</p>
 
 <h3>Step 1</h3>
 
@@ -231,54 +202,37 @@ After the setup is complete, Rudeltippen will automatically load all data for th
 
 <h3>Step 2</h3>
 
-<p>Go to your INSTLLATIONFOLDER and run</p>
+<p>Go to your INSTLLATIONFOLDER and stop Rudeltippen by calling the following command</p>
 
-<div class="highlight"><pre>shutdown.sh
-</pre></div>
-
-<p>OR</p>
-
-<div class="highlight"><pre>shutdown.bat
+<div class="highlight"><pre>play stop
 </pre></div>
 
 <h3>Step 3</h3>
 
-<p>Delete your INSTLLATIONFOLDER</p>
+<p>Delete everything in INSTLLATIONFOLDER except the /conf folder and any custom script you may have created</p>
 
 <h3>Step 4</h3>
 
-<p>Unzip the latest version of Rudeltippen to your INSTLLATIONFOLDER</p>
+<p>Unzip the latest version of Rudeltippen to your INSTLLATIONFOLDER and replace every every existing file.</p>
 
 <h3>Step 5</h3>
 
-<p>In Step 0 you did copy the application.conf and /custom folder from your previous installation, didn't you? Copy application.conf and /custom folder your INSTLLATIONFOLDER/conf and replace the existing file and folder. If you did not make a copy of application.conf, even though you were told to, you need to rerun Step 2 (and only step 2!) of the installation guide (see above) and re-customize your files in /conf/custom folder.</p>
-
-<h3>Step 6</h3>
-
-<p>Rudeltippen has a feature which can automatically updates your playing schedule. By default this feature is not enable. If you want to enable this feature and are upgrading from a version prior to 1.1.0 you need to add the following line to your application.conf:</p>
-
-<div class="highlight"><pre>%prod.automatic.updates<span class="o">=</span><span class="nb">true</span>
-</pre></div>
-
-<h3>Step 7</h3>
-
 <p>You are now ready to start Rudeltippen. If you are on UNIX or Mac you can just run the following command in your INSTLLATIONFOLDER</p>
 
-<div class="highlight"><pre>startup.sh
-</pre></div>
-
-<div class="highlight"><pre>startup.bat
+<div class="highlight"><pre>play start
 </pre></div>
 
 <h2>Advanced configuration</h2>
 
 <h3>SSL</h3>
 
-<p>By default Rudeltippen runs without SSL. If you want to enable SSL for Rudeltippen you need a private key and a certificate (this may be self-signed). In INSTLLATIONFOLDER/conf/custom you find two empty files:</p>
+<p>By default Rudeltippen runs without SSL. If you want to enable SSL for Rudeltippen you need a private key and a certificate. In INSTLLATIONFOLDER/conf you find two empty files:</p>
 
-<div class="highlight"><pre>cert.txt
-key.txt
+<div class="highlight"><pre>cert.txt.example
+key.txt.example
 </pre></div>
+
+<p>Rename both files by removing .example</p>
 
 <p>Paste you private key and your certificate in these files.</p>
 
@@ -310,7 +264,7 @@ key.txt
 
 <p>If you want log4j Support for your Application you find an empty log4j configuration file in INSTLLATIONFOLDER/conf/custom. Edit this file with your required appenders and uncomment the following line in INSTLLATIONFOLDER/application.conf</p>
 
-<div class="highlight"><pre><span class="c">#%prod.application.log.path=/custom/log4j.prod.xml</span>
+<div class="highlight"><pre><span class="c">#%prod.application.log.path=/log4j.prod.xml</span>
 </pre></div>
 
 <p>You need to restart Rudeltippen in order for the changes to take place.</p>
@@ -335,13 +289,6 @@ app.jobinstance<span class="o">=</span>rudeltippen
 <h2>Licence</h2>
 
 <p>Rudeltippen is distributed under <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache 2 licence</a></p>
-
-<h2>Stuff</h2>
-
-<ul>
-<li>Follow <a href="http://twitter.com/rudeltippen">@rudeltippen</a> on Twitter for the latest development news</li>
-<li><a href="http://dev.svenkubiak.de/rudeltippen">Support page (German or Englisch)</a></li>
-</ul>
       </section>
     </div>
 
